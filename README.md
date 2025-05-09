@@ -16,4 +16,4 @@ I learned the importance and intricacies of of making responsive layouts
 
 This webpage is deployed to Github Pages
 
-~ Deployment link:
+~ [Deployment link: ](https://imaniariyana.github.io/se_project_spots/)
