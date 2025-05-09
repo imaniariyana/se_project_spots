@@ -1,0 +1,14 @@
+.footer__text {
+  height: 16px;
+  width: 184px;
+  margin: 60px auto;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  color: rgba (33, 33, 33, 0.7);
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
