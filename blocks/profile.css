@@ -25,6 +25,7 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
   max-width: 420px;
 }
 
@@ -46,6 +47,12 @@
   font-size: 16px;
   line-height: 1;
   display: flex;
+  opacity: 0.4;
+}
+
+.profile__edit-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .profile__add-btn {
@@ -62,6 +69,11 @@
   margin-left: auto;
 }
 
+.profile__add-btn:hover {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
@@ -75,6 +87,7 @@
     margin-right: 0;
     height: 80px;
     width: 80px;
+    margin: 0 0 12px 0;
   }
 
   .profile__name {
