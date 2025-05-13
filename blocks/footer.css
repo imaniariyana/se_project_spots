@@ -1,7 +1,5 @@
 .footer__text {
-  height: 16px;
-  width: 184px;
-  margin: 60px auto;
+  margin: 0 auto;
   padding: 60px 0;
   display: flex;
   justify-content: center;
