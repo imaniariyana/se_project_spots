@@ -39,7 +39,8 @@
   max-width: 420px;
   font-size: 16px;
   line-height: 1;
-  color: #212121 opacity 70%;
+  opacity: 70%;
+  color: #212121;
 }
 
 .profile__edit-btn {
@@ -72,6 +73,9 @@
   line-height: 1;
   font-weight: 500;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
 }
 
 .profile__add-btn:hover {

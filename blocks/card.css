@@ -19,6 +19,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .card__content {
@@ -45,5 +46,9 @@
   .card__image {
     width: 288px;
     height: 288px;
+  }
+
+  .card__title {
+    max-width: 235px;
   }
 }
