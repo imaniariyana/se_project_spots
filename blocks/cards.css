@@ -18,4 +18,8 @@
     grid-template-columns: repeat(auto-fit, 288px);
     gap: 20px 10px;
   }
+
+  .cards {
+    padding: 20px 0;
+  }
 }
