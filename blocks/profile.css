@@ -37,6 +37,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1;
   opacity: 70%;
@@ -75,7 +76,8 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 8px; 
+  gap: 8px;
+  justify-content: center;
 }
 
 .profile__add-btn:hover {
