@@ -10,10 +10,21 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
 }
 
 .modal_is-opened {
+  opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+}
+
+.modal_is-opened .modal__container {
+  transform: scale(1);
 }
 
 .modal__container {
@@ -23,6 +34,8 @@
   background-color: #fff;
   padding: 32px 50px;
   position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
 }
 
 .modal_close-btn {
