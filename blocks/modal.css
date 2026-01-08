@@ -14,7 +14,7 @@
 
   pointer-events: none;
 
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  transition: opacity 0.3s ease, visibility 0s linear;
 }
 
 .modal_is-opened {
@@ -50,6 +50,10 @@
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+}
+
+modal__close-btn:hover {
+  opacity: 0.7;
 }
 
 .modal__title {
