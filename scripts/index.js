@@ -56,6 +56,7 @@ function handleNewPostSubmit(evt) {
   evt.preventDefault();
   console.log(imageLinkInput.value);
   console.log(descriptionInput.value);
+  newPostFormElement.reset();
   closeModal(newPostModal);
 }
 
