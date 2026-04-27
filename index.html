@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,77 +37,18 @@
           </button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant Terrace"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant terrace</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An Outdoor Cafe"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An outdoor cafe</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A very long bridge, over the forest"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">
-                  A very long bridge, over the forest somewhere far far away
-                </h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Tunnel with  morning light"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Mountain house"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain house</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
+        <template id="card-template">
+          <li class="card">
+            <img class="card__image" src="" alt="" />
+            <button type="button" class="card__delete-button"></button>
+            <div class="card__content">
+              <h2 class="card__title"></h2>
+              <button type="button" class="card__like-button"></button>
+            </div>
+          </li>
+        </template>
       </main>
       <footer class="footer">
         <p class="footer__text">2025 &copy; Spots</p>
@@ -172,6 +113,18 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+        <div class="modal" id="preview-modal">
+          <div class="modal__container">
+            <button
+              type="button"
+              class="modal__close-btn"
+              aria-label="Close modal"
+            ></button>
+
+            <img class="modal__image" src="" alt="" />
+            <p class="modal__caption"></p>
+          </div>
         </div>
       </div>
     </div>

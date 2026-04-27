@@ -41,6 +41,10 @@
   background-repeat: no-repeat;
 }
 
+.card__like-button_active {
+  opacity: 100%;
+}
+
 .card__like-button:hover {
   opacity: 100%;
 }
