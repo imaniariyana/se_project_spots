@@ -14,7 +14,9 @@
 
   pointer-events: none;
 
-  transition: opacity 0.3s ease, visibility 0s linear;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s linear;
 }
 
 .modal_is-opened {
@@ -90,7 +92,7 @@ modal__close-btn:hover {
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
   padding: 16px 12px;
-  margin: 8px 0 32px;
+
   color: #212121;
 }
 
@@ -109,6 +111,9 @@ modal__close-btn:hover {
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+.modal__submit-btn:hover {
+  opacity: 0.9;
 }
 
 .modal__input::placeholder {
