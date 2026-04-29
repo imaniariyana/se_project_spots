@@ -47,6 +47,7 @@
 }
 
 .card__like-button_active {
+  background-image: url("../images/red-heart.svg");
   opacity: 1;
 }
 
