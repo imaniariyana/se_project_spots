@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+.card {
+  position: relative;
+}
+
 .card__image {
   height: 413px;
   width: 100%;
@@ -68,6 +72,11 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.card__delete-button:hover {
+  background-image: url("../images/State=Hover.svg");
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
