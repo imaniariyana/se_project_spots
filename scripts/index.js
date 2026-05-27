@@ -1,3 +1,5 @@
+import { resetValidation, validationConfig } from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -49,18 +51,39 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
+const modals = document.querySelectorAll(".modal");
+
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    closeModal(openedModal);
+  }
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscape);
 }
+
+modals.forEach(function (modal) {
+  modal.addEventListener("mousedown", function (evt) {
+    if (evt.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
+  resetValidation(editProfileForm, validationConfig);
+
   openModal(editProfileModal);
 });
 
@@ -70,8 +93,10 @@ editProfileCloseBtn.addEventListener("click", function () {
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+
   closeModal(editProfileModal);
 }
 
@@ -133,8 +158,12 @@ function handleNewPostSubmit(evt) {
   cardsList.prepend(cardElement);
 
   newPostFormElement.reset();
+
+  resetValidation(newPostFormElement, validationConfig);
+
   closeModal(newPostModal);
 }
+
 newPostFormElement.addEventListener("submit", handleNewPostSubmit);
 
 initialCards.forEach(function (cardData) {
