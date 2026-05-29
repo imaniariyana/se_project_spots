@@ -4,6 +4,10 @@
 
 This projects depicts a photo sharing website that displays a users profile. The project contains a gallery of photos with an image, caption and heart icon. This project has been designed to be responsive for smaller devices as well.
 
+## Prpject Pitch
+
+Please check out this video https://drive.google.com/file/d/1fISHvQxzV0LRl0tTir5heaFlfujAuIbT/view?usp=sharing where I share and describe my project
+
 ## Technologies/Techniques Used
 
 Semantic tags, CSS, Google fonts and Responsive design.
