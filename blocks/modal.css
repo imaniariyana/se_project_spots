@@ -58,6 +58,17 @@
   opacity: 0.7;
 }
 
+.modal__close_type_image-preview {
+  top: 0;
+  right: -32px;
+  background-image: url(./../images/white-close-icon.svg);
+  opacity: 1;
+}
+
+.modal__close_type_image-preview:hover {
+  opacity: 0.4;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
@@ -170,10 +181,6 @@
 }
 
 .modal__submit-btn_disabled {
-  background-color: #fff;
-  color: #212121;
-  border: 1px solid rgba(33, 33, 33, 0.4);
-  cursor: default;
   opacity: 0.5;
   pointer-events: none;
 }
