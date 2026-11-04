@@ -16,13 +16,14 @@ const api = new Api({
   },
 });
 
-
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
-const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
+const editProfileNameInput = editProfileModal.querySelector(
+  "#profile-name-input",
+);
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 const newPostBtn = document.querySelector(".profile__add-btn");
@@ -49,6 +50,7 @@ const editAvatarModal = document.querySelector("#edit-avatar-modal");
 const editAvatarForm = editAvatarModal.querySelector(".modal__form");
 const avatarLinkInput = editAvatarModal.querySelector("#avatar-link-input");
 const editAvatarBtn = document.querySelector(".profile__avatar-edit-btn");
+const deleteCancelButton = deleteModal.querySelector(".modal__cancel-btn");
 
 const modals = document.querySelectorAll(".modal");
 
@@ -228,6 +230,10 @@ newPostFormElement.addEventListener("submit", handleNewPostSubmit);
 
 // DELETE CONFIRMATION
 
+deleteCancelButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+
 deleteModalForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
@@ -295,13 +301,9 @@ function getCardElement(data) {
       return;
     }
 
-    const isLiked = likeButton.classList.contains(
-      "card__like-button_active"
-    );
+    const isLiked = likeButton.classList.contains("card__like-button_active");
 
-    const request = isLiked
-      ? api.unlikeCard(data._id)
-      : api.likeCard(data._id);
+    const request = isLiked ? api.unlikeCard(data._id) : api.likeCard(data._id);
 
     likeButton.disabled = true;
 
@@ -309,7 +311,7 @@ function getCardElement(data) {
       .then((updatedCard) => {
         likeButton.classList.toggle(
           "card__like-button_active",
-          updatedCard.isLiked
+          updatedCard.isLiked,
         );
       })
       .catch((error) => {
@@ -334,7 +336,6 @@ function getCardElement(data) {
 
 // LOAD USER AND CARDS FROM THE SERVER
 
-// TripleTen requires Promise.all() inside the Api class.
 api
   .getInitialData()
   .then(([userInfo, initialCards]) => {
