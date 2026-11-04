@@ -4,55 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Imani Bennett" />
-    <meta name="description" content="A brief description of your project" />
     <meta
-      name="Spots"
+      name="description"
+      content="Spots is an interactive photo-sharing website."
+    />
+    <meta
+      name="keywords"
       content="social media, photo sharing, interactive media"
     />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <title>Spots</title>
   </head>
+
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot logo" class="header__logo" />
+        <img
+          src="<%= require('./images/logo.svg') %>"
+          alt="Spots logo"
+          class="header__logo"
+        />
       </header>
+
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <!-- Profile avatar and edit overlay -->
+          <div class="profile__avatar-container">
+            <img
+              src="<%= require('./images/avatar.jpg') %>"
+              alt="Profile picture"
+              class="profile__avatar"
+            />
+
+            <button
+              type="button"
+              class="profile__avatar-edit-btn"
+              aria-label="Edit profile picture"
+            >
+              <img
+                src="<%= require('./images/pencil.svg') %>"
+                alt=""
+                class="profile__avatar-edit-icon"
+              />
+              Edit Avatar
+            </button>
+          </div>
+
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
+
             <button type="button" class="profile__edit-btn">
-              <img src="./images/pencil.svg" alt="Pencil Icon" />Edit Profile
+              <img src="<%= require('./images/pencil.svg') %>" alt="" />
+              Edit Profile
             </button>
           </div>
+
           <button type="button" class="profile__add-btn">
-            <img src="./images/plus.svg" alt="Plus Icon" /> New Post
+            <img src="<%= require('./images/plus.svg') %>" alt="" />
+            New Post
           </button>
         </section>
+
         <section class="cards page__section">
           <ul class="cards__list"></ul>
         </section>
+
         <template id="card-template">
           <li class="card">
             <img class="card__image" src="" alt="" />
-            <button type="button" class="card__delete-button"></button>
+
+            <button
+              type="button"
+              class="card__delete-button"
+              aria-label="Delete card"
+            ></button>
+
             <div class="card__content">
               <h2 class="card__title"></h2>
-              <button type="button" class="card__like-button"></button>
+
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Like card"
+              ></button>
             </div>
           </li>
         </template>
       </main>
+
       <footer class="footer">
         <p class="footer__text">2025 &copy; Spots</p>
       </footer>
+
+      <!-- Edit profile modal -->
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button
@@ -60,7 +104,9 @@
             class="modal__close-btn"
             aria-label="Close modal"
           ></button>
+
           <h2 class="modal__title">Edit profile</h2>
+
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
@@ -75,6 +121,7 @@
               />
               <span class="modal__error profile-name-input-error"></span>
             </label>
+
             <label for="profile-description-input" class="modal__label">
               Description
               <input
@@ -88,10 +135,13 @@
               />
               <span class="modal__error profile-description-input-error"></span>
             </label>
+
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
+
+      <!-- New post modal -->
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button
@@ -99,7 +149,9 @@
             class="modal__close-btn"
             aria-label="Close modal"
           ></button>
+
           <h2 class="modal__title">New post</h2>
+
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
               Image link
@@ -112,6 +164,7 @@
               />
               <span class="modal__error card-image-input-error"></span>
             </label>
+
             <label for="card-caption-input" class="modal__label">
               Description
               <input
@@ -125,10 +178,13 @@
               />
               <span class="modal__error card-caption-input-error"></span>
             </label>
+
             <button type="submit" class="modal__submit-btn">Post</button>
           </form>
         </div>
       </div>
+
+      <!-- Image preview modal -->
       <div class="modal" id="preview-modal">
         <div class="modal__container modal__container_type_preview">
           <button
@@ -141,7 +197,55 @@
           <p class="modal__caption"></p>
         </div>
       </div>
+
+      <!-- Delete confirmation modal -->
+      <div class="modal" id="delete-modal">
+        <div class="modal__container">
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="Close modal"
+          ></button>
+
+          <h2 class="modal__title">
+            Are you sure you want to delete this image?
+          </h2>
+
+          <form class="modal__form">
+            <button type="submit" class="modal__submit-btn">Delete</button>
+            <button type="button" class="modal__cancel-btn">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Edit avatar modal -->
+      <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="Close modal"
+          ></button>
+
+          <h2 class="modal__title">Edit profile avatar</h2>
+
+          <form class="modal__form">
+            <label for="avatar-link-input" class="modal__label">
+              Profile Picture
+              <input
+                id="avatar-link-input"
+                type="url"
+                class="modal__input"
+                placeholder="https://somewebsite.com/someimage.jpg"
+                required
+              />
+              <span class="modal__error avatar-link-input-error"></span>
+            </label>
+
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

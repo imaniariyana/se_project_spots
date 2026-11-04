@@ -86,6 +86,52 @@
   opacity: 0.8;
 }
 
+/* Holds the avatar and edit button in the same position */
+.profile__avatar-container {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+/* Makes the avatar fill its container */
+.profile__avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+/* Places the edit button over the avatar */
+.profile__avatar-edit-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile__avatar-edit-icon {
+  width: 12px;
+  height: 12px;
+  filter: brightness(0) invert(1);
+}
+
+/* Shows the edit button when hovered or keyboard-focused */
+.profile__avatar-container:hover .profile__avatar-edit-btn,
+.profile__avatar-edit-btn:focus-visible {
+  opacity: 1;
+}
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
@@ -124,5 +170,21 @@
 
   .profile__edit-btn {
     justify-content: center;
+  }
+
+  /* Keeps the edit button visible on mobile */
+  .profile__avatar-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 12px;
+  }
+
+  .profile__avatar {
+    margin: 0;
+  }
+
+  .profile__avatar-edit-btn {
+    opacity: 1;
+    font-size: 12px;
   }
 }
